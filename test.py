@@ -5,8 +5,8 @@ import itertools
 
 # omega = [1,2,3,4]
 # F =[1,4]
-omega = [1,2,3,4,5,6]
-F =[1,2]
+omega = list(set([1,2,3,4,5,6,7,8,9,10]))
+F =list(set([1,2,6,9]))
 geneF = []
 
 def get_Ac(f):
@@ -25,13 +25,16 @@ def get_subset(f):
 
 for i in range(len(F)+1):
     if i ==0:
-        result = (None,omega)
+        result = ('φ ' ,omega)
         for k in range(2):
             geneF.append(result[k])
+        print(result)
     elif i!=len(omega):
         comb = list(itertools.combinations(F,i))
         for j in range(len(comb)):
             result = get_subset(list(comb[j]))
             for k in range(2):
                 geneF.append(result[k])
+            print(result)
+print('----------------------')
 print(geneF)
