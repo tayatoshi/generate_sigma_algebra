@@ -1,4 +1,7 @@
-#最小なシグマ加法族の生成
+"""
+最小なシグマ加法族の生成
+"""
+
 import numpy as np
 import copy as cp
 import itertools
