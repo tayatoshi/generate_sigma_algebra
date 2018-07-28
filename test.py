@@ -6,19 +6,19 @@ import numpy as np
 import copy as cp
 import itertools
 
-# omega = [1,2,3,4]
-# F =[1,4]
-omega = list(set([1,2,3,4,5,6,7,8,9,10]))
-F =list(set([1,2,6,9]))
-geneF = []
 
+omega = list(set([1,2,3,4,5,6]))
+F =list(set([1,3,6]))
+geneF = []
+print('Ω :',omega)
+print('F:',F)
+print('----------------------')
+print('F*:')
 def get_Ac(f):
     if f != omega:
         A_c = cp.deepcopy(omega)
         for i in range(len(f)):
             A_c.remove(f[i])
-    # if f == omega:
-    #     A_c = None
     return A_c
 
 def get_subset(f):
@@ -39,5 +39,3 @@ for i in range(len(F)+1):
             for k in range(2):
                 geneF.append(result[k])
             print(result)
-print('----------------------')
-print(geneF)
